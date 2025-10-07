@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>固定費見直しシミュレーター</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>💰 固定費見直しシミュレーター</h1>
+      <p>現在の固定費と削減後の固定費を比較して、長期的な節約効果を確認しましょう</p>
+    </div>
+  </header>
+
+  <main class="container">
+                    <h2 id="section-inputs" class="sr-only">固定費入力フォーム</h2>
+    <section class="main-content" aria-labelledby="section-inputs">
+      <!-- 現在の固定費 -->
+      <section class="card" aria-labelledby="current-title">
+        <h3 id="current-title"><span class="icon">📊</span>現在の固定費</h3>
+
+        <form class="cost-form" id="form-current" aria-label="現在の固定費入力欄">
+          <fieldset>
+            <legend class="sr-only">現在の費用項目</legend>
+
+            <label for="current-housing">住居費（家賃・ローン）</label>
+            <input type="number" id="current-housing" value="0" placeholder="0"/>
+
+            <label for="current-utilities">光熱費</label>
+            <input type="number" id="current-utilities" value="0" placeholder="0"/>
+
+            <label for="current-phone">通信費（携帯・ネット）</label>
+            <input type="number" id="current-phone" value="0" placeholder="0"/>
+
+            <label for="current-insurance">保険料</label>
+            <input type="number" id="current-insurance" value="0" placeholder="0"/>
+
+            <label for="current-subscription">サブスクリプション</label>
+            <input type="number" id="current-subscription" value="0" placeholder="0"/>
+
+            <label for="current-other">その他</label>
+            <input type="number" id="current-other" value="0" placeholder="0"/>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- 削減後の固定費 -->
+      <section class="card" aria-labelledby="reduced-title">
+        <h3 id="reduced-title"><span class="icon">✂️</span>削減後の固定費</h3>
+
+        <form class="cost-form" id="form-reduced" aria-label="削減後の固定費入力欄">
+          <fieldset>
+            <legend class="sr-only">削減後の費用項目</legend>
+
+            <label for="reduced-housing">住居費（家賃・ローン）</label>
+            <input type="number" id="reduced-housing" value="0" placeholder="0"/>
+
+            <label for="reduced-utilities">光熱費</label>
+            <input type="number" id="reduced-utilities" value="0" placeholder="0"/>
+
+            <label for="reduced-phone">通信費（携帯・ネット）</label>
+            <input type="number" id="reduced-phone" value="0" placeholder="0"/>
+
+            <label for="reduced-insurance">保険料</label>
+            <input type="number" id="reduced-insurance" value="0" placeholder="0"/>
+
+            <label for="reduced-subscription">サブスクリプション</label>
+            <input type="number" id="reduced-subscription" value="0" placeholder="0"/>
+
+            <label for="reduced-other">その他</label>
+            <input type="number" id="reduced-other" value="0" placeholder="0"/>
+          </fieldset>
+        </form>
+      </section>
+    </section>
+
+    <!-- 結果表示 -->
+    <section class="results-section" aria-labelledby="results-title">
+      <h2 id="results-title">シミュレーション結果</h2>
+
+      <div class="results-grid">
+        <article class="result-card">
+          <h3>現在の月額固定費</h3>
+          <p class="value" id="current-total">¥0</p>
+        </article>
+
+        <article class="result-card">
+          <h3>削減後の月額固定費</h3>
+          <p class="value" id="reduced-total">¥0</p>
+        </article>
+
+        <article class="result-card highlight">
+          <h3>月間削減額</h3>
+          <p class="value" id="monthly-savings">¥0</p>
+        </article>
+
+        <article class="result-card highlight">
+          <h3>25年後の累計削減額</h3>
+          <p class="value" id="total-savings">¥0</p>
+        </article>
+      </div>
+
+      <!-- 棒グラフ -->
+      <figure class="chart-container" aria-labelledby="chart-title">
+        <figcaption id="chart-title" class="chart-title">月額固定費比較</figcaption>
+        <div class="bar-chart">
+          <div class="bar bar-current">
+            <div class="bar-visual" id="current-bar"></div>
+            <div class="bar-label">現在</div>
+            <div class="bar-value" id="current-bar-value">¥0</div>
+          </div>
+          <div class="bar bar-reduced">
+            <div class="bar-visual" id="reduced-bar"></div>
+            <div class="bar-label">削減後</div>
+            <div class="bar-value" id="reduced-bar-value">¥0</div>
+          </div>
+        </div>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 固定費見直しシミュレーター</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
